@@ -1,0 +1,49 @@
+object Form1: TForm1
+  Left = 192
+  Top = 107
+  Width = 465
+  Height = 509
+  Caption = 'Vielecke'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Turtle1: TTurtle
+    Left = 0
+    Top = 24
+    Width = 457
+    Height = 457
+    HorzScrollBar.Position = 220
+    HorzScrollBar.Range = 882
+    VertScrollBar.Position = 220
+    VertScrollBar.Range = 882
+    BGColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+  end
+  object Button1: TButton
+    Left = 6
+    Top = 2
+    Width = 75
+    Height = 17
+    Caption = 'Zeichne'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 88
+    Top = 0
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = '4'
+  end
+end

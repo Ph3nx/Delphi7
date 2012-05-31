@@ -1,0 +1,76 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Label4: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    ListBox1: TListBox;
+    Button3: TButton;
+    Edit5: TEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private-Deklarationen }
+  public
+    { Public-Deklarationen }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var kapital,zinssatz,endkapital,zins:real;
+    laufzeit:integer;
+begin
+kapital:=strtofloat(edit1.Text);
+zinssatz:=strtofloat(edit2.text);
+endkapital:=strtofloat(edit3.Text);
+
+Laufzeit:=0;
+repeat
+ zins:=kapital*zinssatz/100;
+ kapital:=kapital+zins;
+ laufzeit:=laufzeit+1;
+ listbox1.items.add(inttostr(laufzeit)+' Jahre '+floattostrf(kapital,fffixed,7,2)+' €');
+
+until
+ kapital>=endkapital;
+
+if laufzeit>=100 then begin edit5.text:='Bis dahin lebst du warscheinlich ncihtmehr';
+                            edit4.color:=clred;
+                      end;
+edit4.Text:=inttostr(laufzeit);
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+listbox1.clear;
+edit4.Text:='';
+end;
+
+end.

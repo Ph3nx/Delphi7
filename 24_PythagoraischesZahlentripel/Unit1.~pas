@@ -1,0 +1,41 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    ListBox1: TListBox;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private-Deklarationen }
+  public
+    { Public-Deklarationen }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var a,b,c:longint;
+grenze:integer;
+begin
+listbox1.Clear;
+grenze:=strtoint(edit1.Text);
+for a:=1 to grenze do
+for b:=1 to grenze do
+for c:=1 to grenze do
+if a*a+b*b=c*c then listbox1.Items.add(inttostr(a)+inttostr(b)+inttostr(c));
+end;
+
+end.
+

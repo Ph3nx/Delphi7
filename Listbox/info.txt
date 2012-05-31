@@ -1,0 +1,3 @@
+Im Informatikunterricht lernen wir mit Delphi umzugehen. Das ist manchmal ganz schön mühsam.
+Aber es kann auch Spass machen, wenn endlich ein Programm läuft.
+Der Triumpf des menschlichen Geistes über die Maschine!
